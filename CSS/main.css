@@ -187,6 +187,7 @@ header ul li a
     font-size: 18px;
     z-index: 10;
     color: white;
+    animation: scale 1s linear forwards;
 }
 .title::before {
     content: "";
@@ -560,6 +561,9 @@ footer .container .box.footer-gallery
     margin-bottom: 100px;
     overflow: hidden;
     height: 450px;
+    transform: scale(0);
+    animation: scale 1s linear forwards ;
+    animation-delay: 1s;
 }
 .contact_us .contact.container .contact_us_img 
 {
@@ -653,7 +657,48 @@ footer .container .box.footer-gallery
     width: 375px;
 }
 }
+@media (max-width:415px) {
+    .contact_us .contact.container .explain .link
+    {
+        width: 360px;
+    }
+}
+@media (max-width:400px) {
+    .contact_us .contact.container .explain .link
+    {
+        width: 340px;
+    }
+}
+@media (max-width: 370px) {
+    .contact_us .contact.container .explain .link {
+        width: 310px;
+    }
+    .contact_us .contact.container .contact_us_img img {
+        width: 330px;
+    }
+    .contact_us .title {
+        padding: 5px 10px;
+    }
+    header ul {
+        font-size: 13px;
+    }
+}
+@media (max-width: 345px) {
+    .contact_us .contact.container .explain .link {
+        width: 290px;
+    }
+    .contact_us .title {
+        padding: 5px 5px;
+    }
+}
+
 /* end media query for contact us page  */
+    /* scale animation  */
+        @keyframes scale {
+            0% { transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    /* end animation  */
 /* end contact us page  */
 /* start services page  */
 .services.container
@@ -665,6 +710,8 @@ footer .container .box.footer-gallery
     overflow: hidden;
     margin:  0 50px 50px 50px;
     transition: var(--main-transition);
+    transform: scale(0);
+    animation: scale 1s linear 1s forwards ;
 }
 .services.container .box
 {
@@ -797,6 +844,9 @@ footer .container .box.footer-gallery
     gap: 81px;
     padding: 0 50px;
     margin-bottom: 100px;
+    filter: blur(10px);
+    animation: blur 1s linear forwards;
+    animation-delay: 1s;
 }
 .statistics .container .box
 {
@@ -912,3 +962,14 @@ margin: 40px auto 60px;
     100%{width: 97%;}    
 }
 /* end statistics page  */
+/* blur animation */
+@keyframes blur {
+    0%{
+    filter: blur(10px);
+    }
+    100% 
+    {
+        filter: blur(0px);
+    }
+}
+/* end animation */
